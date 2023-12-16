@@ -1,25 +1,23 @@
-/* -------------------------------- Variables ------------------------------- */
+// Initialize points variable
+let points = 0;
 
-var currentScript = "--- " + document.scripts[document.scripts.length-1].src + " ---";
-var message = "myscript.js is running";
-
-/* -------------------------------- Functions ------------------------------- */
-
-function myFunction(thisMessage = "Hello World!") {
-    console.log(thisMessage);
+// Function to update the points display
+function updatePointsDisplay() {
+  const pointsDisplay = document.getElementById('pointsDisplay');
+  pointsDisplay.textContent = 'Points: ' + points;
 }
 
-function topNav() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
-  }
+// Function to handle button click and increase points
+function increasePoints() {
+  points++;
+  updatePointsDisplay();
+}
 
-/* --------------------------------- Calling -------------------------------- */
+// Add click event listeners to all buttons with class "pointButton"
+const buttons = document.querySelectorAll('.pointButton');
+buttons.forEach(button => {
+  button.addEventListener('click', increasePoints);
+});
 
-console.log(currentScript);
-myFunction();
-myFunction(message);
+// Initial update of the points display
+updatePointsDisplay();

@@ -7,18 +7,38 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- ----------------------------- stylesheets ----------------------------- -->
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
             <link rel="stylesheet" href="stylesheets/StyleTest.css">
 
         <!-- ------------------------------- scripts ------------------------------- -->
-            <!-- <script src="scripts/jsTest.js"></script> -->
             
     </head>
 
 <body>
-    <section>
+    <section class="sidebarsection">
+        <h3>Leaderboard</h3>
+        <ol>
+            <li><strong>Joe</strong>: <span class="lbscore">81238</span></li>
+            <li><strong>Barry</strong>: <span class="lbscore">74312</span></li>
+            <li><strong>Lorem</strong>: <span class="lbscore">64212</span></li>
+            <li><strong>Ipsum</strong>: <span class="lbscore">44953</span></li>
+            <li><strong>Ral</strong>: <span class="lbscore">20987</span></li>
+            <li><strong>Kul</strong>: <span class="lbscore">10482</span></li>
+        </ol>
+    </section>
+    
+    <div>
+        <h2 class="points" id="pointsDisplay">Points</h2>
+    </div>
+    
+    <section class="mainsection">
         <div class="buildingHolder">
-            <button class="building"></button>
-            <button class="building"></button>
+            <button class="building pointButton">
+                <img src="img/buildings/mine.webp">
+            </button>
+            <button class="building">
+                <img src="img/buildings/storage.webp">
+            </button>
             <button class="building"></button>
             <button class="building"></button>
             <button class="building"></button>
@@ -29,7 +49,7 @@
 </body>
 
 <!-- ---------------------------- other scripts ---------------------------- -->
-    <!-- <script src="scripts/jsTest.js"></script> -->
+    <script src="scripts/jsTest.js"></script>
 
 </html>
 

@@ -1,5 +1,28 @@
+:root {
+    --primary-color: #FC814A;
+    --secondary-color: #745874;
+    --accent-color: #BFBFBF;
+    --background-color: #564256;
+    --text-color: #E8E8E8;
+  }
 
-section{
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    line-height: 32px;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+p {
+    letter-spacing: 0.02em;
+}
+
+
+.mainsection{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -7,7 +30,21 @@ section{
     min-height: 90vh;
 }
 
+.sidebarsection{
+    background-color: var(--secondary-color);
+    min-height: 100vh;
+    position: absolute;
+    width: 250px; /* Adjust the width of the sidebar as needed */
+    padding: 40px;
+}
+
+.lbscore{
+    float: right;
+    padding-right: 40px;
+}
+
 .buildingHolder{
+    
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -18,7 +55,7 @@ section{
 .building{
     width: 100px;
     height: 100px;
-    background-color: lightblue;
+    background-color: var(--primary-color);
     border-radius: 20px;
     border: 0px solid #000;
 }
@@ -26,3 +63,12 @@ section{
 .building:hover {
     opacity: 0.7;
   }
+
+.points{
+    text-align: center;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
