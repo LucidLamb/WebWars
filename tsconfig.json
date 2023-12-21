@@ -5,6 +5,7 @@
     "strict": true,
     "sourceMap": true,
     "esModuleInterop": false,
+    "skipLibCheck": true,
     "outDir": "./server-dist"
   },
  "include": ["./server"],

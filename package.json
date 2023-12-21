@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc --watch & node ./server-dist/main.js --watch"
+    "dev": "tsc && concurrently --kill-others \"tsc --watch\" \"node ./server-dist/main.js --watch\"",
+    "migrate": "node server-dist/scripts/migrate.js && DATABASE_URL=./wars.db kysely-codegen"
   },
   "author": "",
   "license": "ISC",
@@ -13,9 +14,11 @@
     "@fastify/cookie": "^9.2.0",
     "@fastify/static": "^6.12.0",
     "@fastify/view": "^8.2.0",
+    "@types/better-sqlite3": "^7.6.8",
     "@types/node": "^20.10.5",
     "@types/nunjucks": "^3.2.6",
     "better-sqlite3": "^9.2.2",
+    "concurrently": "^8.2.2",
     "fastify": "^4.25.1",
     "kysely": "^0.26.3",
     "kysely-codegen": "^0.11.0",

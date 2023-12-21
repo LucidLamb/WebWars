@@ -3,12 +3,20 @@ import view from '@fastify/view';
 import fstatic from '@fastify/static';
 import * as nunjucks from 'nunjucks';
 import * as path from 'node:path';
+import { Kysely, SqliteDialect } from 'kysely';
+import * as SQLite from 'better-sqlite3'
+import { DB } from 'kysely-codegen';
 
 const fastify = Fastify({
   logger: true
 })
 
-console.log( path.join(__dirname, "../src/views"))
+
+const kysely = new Kysely<DB>({
+  dialect: new SqliteDialect({
+    database: new SQLite('wars.db')
+  })
+});
 
 fastify.register(view, {
   engine: {
