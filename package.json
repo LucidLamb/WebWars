@@ -1,0 +1,28 @@
+{
+  "name": "webwars",
+  "version": "1.0.0",
+  "description": "Web based game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc && concurrently --kill-others \"tsc --watch\" \"node ./server-dist/main.js --watch\"",
+    "migrate": "node server-dist/scripts/migrate.js && DATABASE_URL=./wars.db kysely-codegen"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cookie": "^9.2.0",
+    "@fastify/static": "^6.12.0",
+    "@fastify/view": "^8.2.0",
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/node": "^20.10.5",
+    "@types/nunjucks": "^3.2.6",
+    "better-sqlite3": "^9.2.2",
+    "concurrently": "^8.2.2",
+    "fastify": "^4.25.1",
+    "kysely": "^0.26.3",
+    "kysely-codegen": "^0.11.0",
+    "nunjucks": "^3.2.4",
+    "typescript": "^5.3.3"
+  }
+}
