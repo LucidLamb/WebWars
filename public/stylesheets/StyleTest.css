@@ -4,6 +4,8 @@
     --accent-color: #BFBFBF;
     --background-color: #564256;
     --text-color: #E8E8E8;
+    --primary-button-color: #0276FF;
+    --secondary-button-color: #1acc61;
   }
 
 body {
@@ -21,6 +23,58 @@ p {
     letter-spacing: 0.02em;
 }
 
+.headertext{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px
+}
+
+button{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+button:hover {
+    -webkit-box-shadow: 0px 0px 26px -10px rgba(0,0,0,0.4); 
+    box-shadow: 0px 0px 26px -10px rgba(0,0,0,0.4);
+    transform: translateY(-2px);
+}
+
+.btn {
+    background-color: var(--primary-button-color);
+    border-radius: 4px;
+    border: 0;
+    box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inherit;
+    font-family: var(--main-font-family);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    min-height: 56px;
+    min-width: 120px;
+    padding: 16px;
+    position: relative;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
+  }
+  .btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed; /* Optional: Change the cursor to indicate it's not clickable */
+}
+.btn2{
+    background-color: var(--secondary-button-color);
+}
+
 
 .mainsection{
     display: flex;
@@ -30,13 +84,29 @@ p {
     min-height: 90vh;
 }
 
-.sidebarsection{
+.roundsec{
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.sidebar-left-section {
     background-color: var(--secondary-color);
     min-height: 100vh;
-    position: absolute;
+    position: fixed;
     width: 250px; /* Adjust the width of the sidebar as needed */
     padding: 40px;
+    left: 0;
 }
+
+.sidebar-right-section {
+    background-color: var(--secondary-color);
+    min-height: 100vh;
+    position: fixed;
+    width: 250px; /* Adjust the width of the sidebar as needed */
+    padding: 40px;
+    right: 0;
+}
+
 
 .lbscore{
     float: right;
@@ -44,10 +114,9 @@ p {
 }
 
 .buildingHolder{
-    
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 }
@@ -58,11 +127,24 @@ p {
     background-color: var(--primary-color);
     border-radius: 20px;
     border: 0px solid #000;
+    margin: 0px;
+    /* padding: 10px; */
 }
 
 .building:hover {
-    opacity: 0.7;
-  }
+  /* opacity: 0.7; */
+  background-color: #a65b38;
+  -webkit-box-shadow: 0px 0px 26px -10px rgba(0,0,0,0.8); 
+  box-shadow: 0px 0px 26px -10px rgba(0,0,0,0.8);
+}
+.buildingempty{
+  background-color: #ffffff00;
+  border: solid white 0.5px;
+}
+.buildingempty:hover{
+  background-color: #ffffff00;
+  border: solid white 0.5px;
+}
 
 .points{
     text-align: center;
@@ -72,3 +154,51 @@ img{
     width: 100%;
     height: auto;
 }
+
+/* Progress bar */
+
+.progress-bar {
+    display: none;
+    width: 0%;
+    background: linear-gradient(to bottom, var(--secondary-button-color), var(--secondary-button-color));
+    height: 5px;
+  }
+  
+
+  .upgrade-item {
+    margin-bottom: 20px;
+}
+
+.round-time-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .round-time-bar div {
+    height: 5px;
+    background: linear-gradient(to bottom, red, #900);
+    animation: roundtime linear forwards;
+    transform-origin: left center;
+  }
+  
+  @keyframes roundtime {
+    to {
+      transform: scaleX(0);
+    }
+  }
+  
+  /* Optional variations */
+  
+  .round-time-bar[data-style="smooth"] div {
+    animation: roundtime linear forwards;
+  }
+  
+  .round-time-bar[data-color="blue"] div {
+    background: linear-gradient(to bottom, #64b5f6, #1565c0);
+  }
+  
+  .round-time-bar[data-style="fixed"] div {
+    width: calc(var(--duration) * 5%);
+  }
+  
+/* --------------- */
