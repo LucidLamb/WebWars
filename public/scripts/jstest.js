@@ -1,23 +1,16 @@
-// Initialize points variable
-let points = 0;
+// index.js (or your main file)
+const fastify = require('fastify')();
+const path = require('path');
 
-// Function to update the points display
-function updatePointsDisplay() {
-  const pointsDisplay = document.getElementById('pointsDisplay');
-  pointsDisplay.textContent = 'Points: ' + points;
-}
-
-// Function to handle button click and increase points
-function increasePoints() {
-  points++;
-  updatePointsDisplay();
-}
-
-// Add click event listeners to all buttons with class "pointButton"
-const buttons = document.querySelectorAll('.pointButton');
-buttons.forEach(button => {
-  button.addEventListener('click', increasePoints);
+fastify.register(require('fastify-nunjucks'), {
+    templates: path.join(__dirname, 'views'),
 });
 
-// Initial update of the points display
-updatePointsDisplay();
+fastify.get('/login', async (request, reply) => {
+    reply.view('login.html');
+});
+
+fastify.listen(3000, (err) => {
+    if (err) throw err;
+    console.log('Server listening on http://localhost:3000');
+});
