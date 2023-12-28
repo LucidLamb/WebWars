@@ -5,6 +5,7 @@ export async function up(db: Kysely<any>): Promise<void> {
     .addColumn('id', 'integer', b => b.primaryKey())
     .addColumn('email', 'varchar', b => b.unique())
     .addColumn('points', 'integer')
+    .addColumn('created_at', 'date')
     .execute()
 }
 

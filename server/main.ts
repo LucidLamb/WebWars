@@ -30,9 +30,24 @@ fastify.register(fstatic, {
   prefix: '/public/', // optional: default '/'
 })
 
+
+
 fastify.get('/', function (request, reply) {
-  reply.view('base/main.html')
+  reply.view('index.njk')
 })
+
+fastify.get('/player/:username', (request, reply) => {
+  if (request.params !== null && typeof request.params === 'object' && 'username' in request.params) {
+    
+    return reply.view('player.njk', {
+      username: request.params.username
+    })
+  }
+
+  return reply.send(404)
+})
+
+
 
 fastify.listen({ port: 3000 }, function (err, address) {
   if (err) {

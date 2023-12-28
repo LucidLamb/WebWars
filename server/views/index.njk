@@ -1,0 +1,70 @@
+{% extends "base/main.njk" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block body %}
+    <section class="loginsection">
+        <h1>Login</h1>
+        <form id="loginForm" action="/login" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <div>
+        <!-- <section class="sidebarsection">
+            <h3>Leaderboard</h3>
+            <ol>
+                <li><strong>Joe</strong>: <span class="lbscore">81238</span></li>
+                <li><strong>Barry</strong>: <span class="lbscore">74312</span></li>
+                <li><strong>Lorem</strong>: <span class="lbscore">64212</span></li>
+                <li><strong>Ipsum</strong>: <span class="lbscore">44953</span></li>
+                <li><strong>Ral</strong>: <span class="lbscore">20987</span></li>
+                <li><strong>Kul</strong>: <span class="lbscore">10482</span></li>
+            </ol>
+        </section> -->
+    </div>
+    
+    <div>
+        <h2 class="points" id="pointsDisplay">Points</h2>
+    </div>
+    
+    <section class="mainsection">
+        <div class="buildingHolder">
+
+            <!--
+
+                ---- REWRITE THE STYLING CODE ----
+                HAVE A BUILDING SLOT STYLING, THEN WHEN A BUILDING GOES ON OVERWRITE THAT STYLING
+                AND THEN AGAINST OVERWRITE BASED ON THE BUILDING TYPE
+
+            -->
+
+            <button class="building pointButton"><img src="public/img/buildings/mine.webp"></button>
+            <button class="building"><img src="public/img/buildings/storage.webp"></button>
+            <button class="building buildingempty"></button>
+            <button class="building buildingempty"></button>
+
+            <button class="building buildingempty"></button>
+            <button class="building buildingempty"></button>
+            <button class="building buildingempty"></button>
+            <button class="building buildingempty"></button>
+
+            <button class="building buildingempty"></button>
+            <button class="building buildingempty"></button>
+            <button class="building buildingempty"></button>
+            <button class="building buildingempty"></button>
+
+            <button class="building buildingempty"></button>
+            <button class="building buildingempty"></button>
+            <button class="building buildingempty"></button>
+            <button class="building buildingempty"></button>
+
+        </div>
+    </section>
+    {% endblock %}
