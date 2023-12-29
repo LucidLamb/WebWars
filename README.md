@@ -11,5 +11,5 @@ JC instructions
 
 Branch uses
     - Fastify
-    - Nunjucks
-    - Kysely
+    - Nunjucks (html blocks)
+    - Kysely (talk to sqllite)
